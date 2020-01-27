@@ -1,6 +1,6 @@
 package com.mycompany.app;
 
-import java.util.properties;
+import java.util.Properties;
 import java.io.InputStream;
 import java.io.IOException;
 

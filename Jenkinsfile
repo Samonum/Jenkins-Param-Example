@@ -9,8 +9,8 @@ pipeline {
         stage('Build') {
             steps {
                 sh """
-				mkdir -p ./src/resources
-                mv ./config/default.properties ./src/resources/config.properties
+				mkdir -p ./src/main/resources
+                mv ./config/default.properties ./src/main/resources/config.properties
                 mvn -B -DskipTests clean package"""
             }
         }
