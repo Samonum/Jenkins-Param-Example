@@ -6,16 +6,35 @@ package com.mycompany.app;
 public class App
 {
 
-    private final String message = "Hello World!";
+    private String data;
 
-    public App() {}
+    public App() {
+        
+        try (InputStream input = getClass()
+			.getClassLoader().getResourceAsStream("config.properties")) {
+
+            Properties prop = new Properties();
+
+            // Load a properties file and read the data variable
+            prop.load(input);
+            
+            data = prop.getProperty("data");
+
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
+            
+        // Add an Exclamation mark to show how important our data is
+        data = data.concat("!");
+        
+    }
 
     public static void main(String[] args) {
         System.out.println(new App().getMessage());
     }
 
     private final String getMessage() {
-        return message;
+        return data;
     }
 
 }

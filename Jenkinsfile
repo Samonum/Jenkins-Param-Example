@@ -8,7 +8,9 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh 'mvn -B -DskipTests clean package'
+                sh """
+                mv config/default.properties src/resources/config.properties
+                mvn -B -DskipTests clean package"""
             }
         }
         stage('Test') {
