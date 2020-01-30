@@ -36,7 +36,7 @@ public class AppTest
 			assertNotNull("The data property is not set.", prop.getProperty("data"));
 
         } catch (IOException ex) {
-            fail("An IOException occured trying to load the config file.")
+            fail("An IOException occured trying to load the config file.");
         }
     }
 	
